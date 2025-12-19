@@ -5,13 +5,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // TODO: Replace with your Firebase project config
 const firebaseConfig = {
-  apiKey: 'AIzaSyDcdAObRdoP3-_52mzS2jmNCxDZDxe7TFc',
-  authDomain: 'book-review-6e3ae.firebaseapp.com',
-  projectId: 'book-review-6e3ae',
-  storageBucket: 'book-review-6e3ae.appspot.com',
-  messagingSenderId: '1077372672320',
-  appId: '1:1077372672320:web:2e46d8032aaee3f01382a5',
-  measurementId: 'G-LX2DRZXR1J'
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
