@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { auth } from "../firebase";
 
 const MainLayout: React.FC<{ user?: { displayName?: string | null; photoURL?: string | null } }> = ({ user }) => (

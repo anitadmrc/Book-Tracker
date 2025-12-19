@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { MdLibraryBooks, MdMenuBook, MdCheckCircle, MdBookmarkBorder } from "react-icons/md";
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { useNavigate } from "react-router-dom";
 import { listenToBooksByUser, deleteBook } from "../firebaseBooks";
 import { Book } from "../types";
@@ -48,10 +51,10 @@ const Dashboard: React.FC = () => {
       </div>
       {/* Overview cards */}
       <section style={{ display: "flex", gap: 24, marginBottom: 32 }}>
-        <StatCard label="Total Books" value={books.length} icon={<MdLibraryBooks size={28} color="#4CAF93" />} />
-        <StatCard label="Currently Reading" value={currentlyReading.length} icon={<MdMenuBook size={28} color="#4CAF93" />} />
-        <StatCard label="Finished" value={finished.length} icon={<MdCheckCircle size={28} color="#4CAF93" />} />
-        <StatCard label="Want to Read" value={wantToRead.length} icon={<MdBookmarkBorder size={28} color="#4CAF93" />} />
+        <StatCard label="Total Books" value={books.length} icon={<LibraryBooksIcon sx={{ fontSize: 28, color: '#4CAF93' }} />} />
+        <StatCard label="Currently Reading" value={currentlyReading.length} icon={<MenuBookIcon sx={{ fontSize: 28, color: '#4CAF93' }} />} />
+        <StatCard label="Finished" value={finished.length} icon={<CheckCircleIcon sx={{ fontSize: 28, color: '#4CAF93' }} />} />
+        <StatCard label="Want to Read" value={wantToRead.length} icon={<BookmarkBorderIcon sx={{ fontSize: 28, color: '#4CAF93' }} />} />
       </section>
       {/* Book sections */}
       <Section
@@ -195,7 +198,7 @@ const Dashboard: React.FC = () => {
   );
 };
 
-const StatCard: React.FC<{ label: string; value: number; icon: React.ReactNode }> = ({ label, value, icon }) => (
+const StatCard: React.FC<{ label: string; value: number; icon: JSX.Element }> = ({ label, value, icon }) => (
   <div style={{ background: "#fff", borderRadius: 12, boxShadow: "0 1px 4px #e0e0e0", padding: 24, flex: 1, display: "flex", alignItems: "center", gap: 16 }}>
     <span>{icon}</span>
     <div>

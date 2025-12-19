@@ -8,7 +8,6 @@ import {
   query,
   where,
   onSnapshot,
-  DocumentReference,
   deleteDoc,
 } from 'firebase/firestore';
 import { Book } from './types';
